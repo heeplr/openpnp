@@ -870,7 +870,7 @@ public class GcodeDriverSolutions implements Solutions.Subject {
                 case ENABLE_COMMAND:
                     if (dialect == FirmwareType.GrblHAL) {
                         commandBuilt = "\\u0003\n$X\n"
-                            + "(^ send ctrl-c to abort any previous state & reset any previous alarm)"
+                            + "(^ send ctrl-c to abort any previous state & reset any previous alarm)";
                     }
                     break;
                 case COMMAND_CONFIRM_REGEX:
