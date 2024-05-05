@@ -819,7 +819,7 @@ public class GcodeDriverSolutions implements Solutions.Subject {
                         }
                         // prepend alarm reset for grblHAL controllers
                         else if (dialect == FirmwareType.GrblHAL) {
-                            commandBuilt = "\u0003\n$X\n"
+                            commandBuilt = "\\u0003\n$X\n"
                                 + "(^ send ctrl-c to abort any previous state & reset any previous alarm)\n"
                                 + commandBuilt;
                         }
@@ -869,7 +869,7 @@ public class GcodeDriverSolutions implements Solutions.Subject {
                     break;
                 case ENABLE_COMMAND:
                     if (dialect == FirmwareType.GrblHAL) {
-                        commandBuilt = "\u0003\n$X\n"
+                        commandBuilt = "\\u0003\n$X\n"
                             + "(^ send ctrl-c to abort any previous state & reset any previous alarm)"
                     }
                     break;
@@ -900,7 +900,7 @@ public class GcodeDriverSolutions implements Solutions.Subject {
                         commandBuilt = "$H ; Home all axes";
                     }
                     else if (dialect == FirmwareType.GrblHAL) {
-                        commandBuilt = "\u0003\n$X\n"
+                        commandBuilt = "\\u0003\n$X\n"
                             + "(^ send ctrl-c to abort any previous state & reset any previous alarm)\n"
                             + "{Acceleration:M204 S%.2f ; Initialize acceleration}\n"
                             + "$H ; Home all axes";
